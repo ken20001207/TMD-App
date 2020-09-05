@@ -8,7 +8,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^3.0.2",
+    "@react-navigation/native": "^5.7.3",
+    "@types/": "react-navigation/native",
     "@types/react-native-linear-gradient": "^2.4.0",
+    "@types/react-native-modal": "^4.1.1",
     "expo": "~38.0.8",
     "expo-linear-gradient": "~8.2.1",
     "expo-status-bar": "^1.0.2",
@@ -17,6 +21,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-easy-grid": "^0.2.2",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-modal": "^11.5.6",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
