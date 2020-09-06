@@ -33,10 +33,21 @@ export default function App() {
     };
 
     const createTodo = (title: string, deadline: Date) => {
-        fetch(apiUrl + "/todos", {
+        const body = JSON.stringify({ title: title, deadline: deadline.toISOString(), description: "create from app" });
+        fetch(apiUrl + "/todos/", {
             method: "POST",
-            body: JSON.stringify({ title: title, deadline: deadline.toISOString(), description: "create from app" }),
-        }).then(() => toggleCreatingTodo());
+            body: body,
+        })
+            .then((res) => {
+                if (res.status === 201) {
+                    downloadData();
+                    toggleCreatingTodo();
+                    Alert.alert("创建成功！");
+                } else {
+                    Alert.alert("创建失败，请重试");
+                }
+            })
+            .catch((err) => Alert.alert(err.toString()));
     };
 
     const toggleCreatingTodo = () => {
